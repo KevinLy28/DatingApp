@@ -5,7 +5,7 @@ import { User } from './_models/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'], 
 })
 export class AppComponent implements OnInit {
   title = 'Dating App';
@@ -17,9 +17,13 @@ export class AppComponent implements OnInit {
   }
 
   setCurrentUser() {
-    const userString = localStorage.getItem('user');
-    if (!userString) return;
-    const user: User = JSON.parse(userString);
-    this.accountService.setCurrentUser(user);
+    if (typeof localStorage !== 'undefined') {
+      const userString = localStorage.getItem('user');
+      if (!userString) return;
+      const user: User = JSON.parse(userString);
+      this.accountService.setCurrentUser(user);
+    } else {
+      console.error('localStorage is not available.');
+    }
   }
 }
