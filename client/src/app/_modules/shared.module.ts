@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -10,10 +11,14 @@ import { ToastrModule } from 'ngx-toastr';
     CommonModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
+    }),
+    NgxSpinnerModule.forRoot({
+      type: 'fire'
     })
   ],
   exports: [
-    ToastrModule
+    ToastrModule,
+    NgxSpinnerModule
   ]
 })
 export class SharedModule { }
