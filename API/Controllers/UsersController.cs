@@ -89,7 +89,7 @@ public class UsersController : BaseAPIController // /api/users
 
     [HttpPut("set-main-photo/{photoId}")]
 
-    public async Task<ActionResult> SetMainPhoto(id photoId)
+    public async Task<ActionResult> SetMainPhoto(int photoId)
     {
         var user = await _userRepository.GetUserByUsernameAsync(User.GetUserName());
 

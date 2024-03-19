@@ -4,6 +4,10 @@
     height: 85%;
 }
 
+.editProfile{
+    height: 500px;
+}
+
 .card-body {
     padding: 0 25px;
 }
